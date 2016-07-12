@@ -1,0 +1,32 @@
+{
+  "name": "lesshint-support-checks",
+  "version": "0.1.6",
+  "description": "Typespace plugin for Gulp.",
+  "main": "lib/gulp-typespace",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Joshuakgoldberg/gulp-typespace.git"
+  },
+  "scripts": {
+    "test": "node ./node_modules/mocha/bin/mocha"
+  },
+  "keywords": [
+    "lesshint",
+    "less",
+    "browser support"
+  ],
+  "author": {
+    "name": "Josh Goldberg",
+    "email": "joshuakgoldberg@outlook.com>"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Joshuakgoldberg/gulp-typespace/issues"
+  },
+  "homepage": "https://github.com/Joshuakgoldberg/gulp-typespace#readme",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "lesshint": "^1.5.2",
+    "mocha": "^2.5.3"
+  }
+}
