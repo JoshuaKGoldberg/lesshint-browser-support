@@ -9,11 +9,14 @@ describe('browser-support', () => {
         const browserSupport = require('../lib/browser_support');
         const config = {
             linters: [browserSupport],
-            browserSupport: [
-                'Chrome >= 49'
-            ]
+            browserSupport: {
+                enabled: true,
+                browsers: [
+                    'Chrome >= 25'
+                ]
+            }
         };
-        const source = '.fail {\n -webkit-display: flex;\n}\n';
+        const source = '.fail {\n    -webkit-display: flex;\n}\n';
 
         linter.configure(config);
 

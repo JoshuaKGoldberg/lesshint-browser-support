@@ -25,6 +25,7 @@
   },
   "homepage": "https://github.com/Joshuakgoldberg/gulp-typespace#readme",
   "devDependencies": {
+    "caniuse-db": "^1.0.30000506",
     "chai": "^3.5.0",
     "lesshint": "^1.5.2",
     "mocha": "^2.5.3"
