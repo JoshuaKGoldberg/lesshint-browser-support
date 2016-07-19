@@ -5,7 +5,3 @@ node_modules
 *.log
 logs
 npm-debug.log*
-
-# Compiled output
-lib/**
-src/**/*.js

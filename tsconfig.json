@@ -6,6 +6,9 @@
         "sourceMap": true
     },
     "files": [
-        "src/supportchecks.ts"
+        "src/definitions.ts",
+        "src/browserSupport.ts",
+        "src/caniuse/css.ts",
+        "src/caniuse/query.ts"
     ]
 }

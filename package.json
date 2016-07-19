@@ -1,6 +1,6 @@
 {
   "name": "lesshint-support-checks",
-  "version": "0.1.6",
+  "version": "0.0.1",
   "description": "Typespace plugin for Gulp.",
   "main": "lib/gulp-typespace",
   "repository": {
@@ -25,9 +25,20 @@
   },
   "homepage": "https://github.com/Joshuakgoldberg/gulp-typespace#readme",
   "devDependencies": {
+    "@types/node": "^4.0.30",
     "caniuse-db": "^1.0.30000506",
     "chai": "^3.5.0",
+    "gulp": "^3.9.1",
+    "gulp-mocha": "^2.2.0",
+    "gulp-tslint": "^6.0.1",
+    "gulp-typescript": "^2.13.6",
     "lesshint": "^1.5.2",
-    "mocha": "^2.5.3"
+    "mocha": "^2.5.3",
+    "run-sequence": "^1.2.2",
+    "tslint": "^3.13.0",
+    "typescript": "^1.8.10"
+  },
+  "dependencies": {
+    "caniuse-db": "^1.0.30000506"
   }
 }
