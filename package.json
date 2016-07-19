@@ -1,8 +1,8 @@
 {
   "name": "lesshint-support-checks",
-  "version": "0.0.1",
-  "description": "Typespace plugin for Gulp.",
-  "main": "lib/gulp-typespace",
+  "version": "0.1.0",
+  "description": "A lesshint plugin to detect unnecessary browser prefixes.",
+  "main": "lib/browserSupport",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Joshuakgoldberg/gulp-typespace.git"
