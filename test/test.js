@@ -121,7 +121,7 @@ describe("browser-support", () => {
                 ]
             }
         };
-        const source = ".pass {\n    color: red;\n}\n";
+        const source = ".pass {\n    display: block;\n}\n";
 
         linter.configure(config);
 
