@@ -1,0 +1,13 @@
+{
+    "fileExtensions": [".less", ".css"],
+    "excludedFiles": ["vendor.less"],
+    "linters": [
+        "C:/Code/lesshint-browser-support/lib/browserSupport"
+    ],
+    "browserSupport": {
+        "enabled": true,
+        "browsers": [
+            "Chrome >= 29"
+        ]
+    }
+}
