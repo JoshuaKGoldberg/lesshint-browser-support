@@ -70,7 +70,7 @@ function parseBaseAttribute(raw: string): string {
         }
     }
 
-    throw new Error(`Unknown browser prefix on '${raw}`);
+    return raw;
 }
 
 /**
@@ -79,8 +79,8 @@ function parseBaseAttribute(raw: string): string {
  * @returns The equivalent caniuse feature key, if it exists.
  */
 export function feature(rawProp: string, rawValue: string): string {
-    var baseProp = parseBaseAttribute(rawProp);
-    var baseValue = parseBaseAttribute(rawValue);
+    const baseProp = parseBaseAttribute(rawProp);
+    const baseValue = parseBaseAttribute(rawValue);
 
     // We don't care about non-prefixed tags
     if (baseProp === rawProp && baseValue === rawValue) {

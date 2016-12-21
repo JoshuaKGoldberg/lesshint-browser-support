@@ -1,8 +1,6 @@
-/// <reference path="../../node_modules/@types/node/index.d.ts" />
-
 "use strict";
 
-const data = require("../../node_modules/caniuse-db/data.json").data;
+const data = require("caniuse-db/data.json").data;
 
 import { IBrowser } from "../definitions";
 
@@ -18,12 +16,12 @@ export function query(feature: string, browser: IBrowser) {
         throw new Error(`Unknown feature: '${feature}'.`);
     }
 
-    var stats = data[feature].stats;
+    const stats = data[feature].stats;
     if (!stats[browser.name]) {
         throw new Error(`Unknown browser: '${browser}'.`);
     }
 
-    var browserStats = stats[browser.name];
+    const browserStats = stats[browser.name];
     if (!browserStats[browser.version]) {
         throw new Error(`Unknown browser version: '${browser.name}' at '${browser.version}'.`);
     }

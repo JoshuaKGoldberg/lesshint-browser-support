@@ -2,11 +2,12 @@ const Lesshint = require("lesshint");
 const { expect } = require("chai");
 const path = require("path");
 
+const browserSupport = require("../lib/browserSupport");
+
 describe("browser-support", () => {
     it("flags a violating prefixed rule", () => {
         // Arrange
         const linter = new Lesshint();
-        const browserSupport = require("../lib/browserSupport");
         const config = {
             linters: [browserSupport],
             browserSupport: {
@@ -31,6 +32,7 @@ describe("browser-support", () => {
             "line": 2,
             "linter": "browserSupport",
             "message": "Don't unnecessarily support older browsers.",
+            "position": 12,
             "severity": "warning",
             "source": "    -webkit-display: flex;"
         }]);
@@ -39,7 +41,6 @@ describe("browser-support", () => {
     it("ignores an acceptable prefixed rule", () => {
         // Arrange
         const linter = new Lesshint();
-        const browserSupport = require("../lib/browserSupport");
         const config = {
             linters: [browserSupport],
             browserSupport: {
@@ -63,7 +64,6 @@ describe("browser-support", () => {
     it("ignores a violating non-prefixed rule", () => {
         // Arrange
         const linter = new Lesshint();
-        const browserSupport = require("../lib/browserSupport");
         const config = {
             linters: [browserSupport],
             browserSupport: {
@@ -87,7 +87,6 @@ describe("browser-support", () => {
     it("ignores an acceptable non-prefixed rule", () => {
         // Arrange
         const linter = new Lesshint();
-        const browserSupport = require("../lib/browserSupport");
         const config = {
             linters: [browserSupport],
             browserSupport: {
@@ -111,7 +110,6 @@ describe("browser-support", () => {
     it("ignores a standard rule", () => {
         // Arrange
         const linter = new Lesshint();
-        const browserSupport = require("../lib/browserSupport");
         const config = {
             linters: [browserSupport],
             browserSupport: {
@@ -122,6 +120,29 @@ describe("browser-support", () => {
             }
         };
         const source = ".pass {\n    display: block;\n}\n";
+
+        linter.configure(config);
+
+        // Act
+        const result = linter.checkString(source, "test.less");
+
+        // Assert
+        expect(result).to.deep.equal([]);
+    });
+
+    it("ignores an unusually prefixed rule", () => {
+        // Arrange
+        const linter = new Lesshint();
+        const config = {
+            linters: [browserSupport],
+            browserSupport: {
+                enabled: true,
+                browsers: [
+                    "Chrome >= 28"
+                ]
+            }
+        };
+        const source = ".pass {\n    -rtl-reverse-margin-right: 7px;\n}\n";
 
         linter.configure(config);
 
