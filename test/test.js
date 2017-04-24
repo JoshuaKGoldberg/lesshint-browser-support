@@ -5,6 +5,9 @@ const path = require("path");
 const browserSupport = require("../lib/browserSupport");
 
 describe("browser-support", () => {
+    // Offloading the initial require work here instead of the first test
+    require("caniuse-db/data.json");
+
     it("flags a violating prefixed rule", () => {
         // Arrange
         const linter = new Lesshint();
